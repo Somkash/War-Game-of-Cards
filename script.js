@@ -13,7 +13,7 @@ document.getElementById("new-deck").addEventListener("click", () => {
     fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             deckId = data.deck_id
             btnDraw.disabled = false;
             scoreComp=0
@@ -28,7 +28,7 @@ btnDraw.addEventListener("click", ()=>{
     fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     .then(res=> res.json())
     .then(data => {
-        console.log(data)
+        // console.log(data)
         
         remainingCardsEl.innerHTML=`Remaining Cards: ${data.remaining}`
         whoWinsEl.innerText = determineCardWinner(data.cards[0], data.cards[1])
